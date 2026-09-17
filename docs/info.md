@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+A custom GDS layout implements some simple analog circuits with an interface to the Tiny Tapeout digital pins of a 1x1 tile.
 
 ## How to test
 
-Explain how to use your project
+Various `ui_in` inputs select parts of the analog circuit and the `uo_out` pins reflect results.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+Maybe an oscilloscope for carefully monitoring things, but otherwise MicroPython scripts run on the Tiny Tapeout demo board can drive the thing and gather results. For more info, see the original repo (https://github.com/algofoogle/ttihp26b-analog-junk).
