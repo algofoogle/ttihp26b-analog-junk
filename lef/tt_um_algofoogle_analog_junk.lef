@@ -368,6 +368,8 @@ MACRO tt_um_algofoogle_analog_junk
     END
   END VGND
   OBS
+      LAYER Metal5 ;
+        RECT 110.955 22.370 179.255 89.330 ;
       LAYER TopMetal1 ;
         RECT 50.955 68.530 101.505 103.365 ;
   END
