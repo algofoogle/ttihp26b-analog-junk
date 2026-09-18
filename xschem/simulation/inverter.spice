@@ -1,0 +1,6 @@
+** sch_path: /foss/designs/ttihp26b-analog-junk/xschem/inverter.sch
+.subckt inverter VCC VSS Y A
+*.PININFO VCC:B A:I Y:O VSS:B
+MM1 Y A VSS VSS sg13_lv_nmos w=0.15u l=0.13u ng=1
+MM2 Y A VCC VCC sg13_lv_pmos w=0.15u l=0.13u ng=1
+.ends

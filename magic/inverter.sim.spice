@@ -1,0 +1,12 @@
+* NGSPICE file created from inverter_parax.ext - technology: ihp-sg13g2
+
+.subckt inverter_parax Y A VSS VCC
+X0 Y A VSS VSS sg13_lv_nmos ad=0.1066p pd=1.38u as=0.2151p ps=2.08u w=0.15u l=0.13u
+X1 Y A VCC VCC sg13_lv_pmos ad=0.1066p pd=1.38u as=0.2151p ps=2.08u w=0.15u l=0.13u
+C0 Y A 0.04431f
+C1 VCC Y 0.03833f
+C2 VCC A 0.11392f
+C3 Y VSS 0.2381f
+C4 VCC VSS 0.05239f
+.ends
+
