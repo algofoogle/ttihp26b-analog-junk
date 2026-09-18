@@ -1,7 +1,8 @@
 PROJECT_NAME ?= tt_um_algofoogle_analog_junk
 PROJECT_LVS_VERILOG ?= ../src/project.v # ../src/LVS-project.v
 # MAGICEXEC ?= magic -rcfile magicrc -noconsole -dnull
-MAGICEXEC ?= magic -rcfile $(PDK_MAGICRC) -noconsole -dnull
+# MAGICEXEC ?= magic -rcfile $(PDK_MAGICRC) -noconsole -dnull
+MAGICEXEC ?= magic -rcfile $(PDK_ROOT)/$(PDK)/libs.tech/magic/$(PDK).magicrc -noconsole -dnull
 
 .PHONY: lvs magic start
 

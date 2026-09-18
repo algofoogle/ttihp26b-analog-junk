@@ -14,11 +14,18 @@
 #   magicc array255x.mag
 # ...and then do SHIFT+ALT+G to enable snapping to a 10nm grid.
 
-# Load the PDK config:
-# set sky_magrc [file normalize $env(PDK_MAGICRC)]
-set pdk_magrc [file normalize $env(PDK_ROOT)/$env(PDK)/libs.tech/magic/$env(PDK).magicrc] ;# ihp-sg13g2 magicrc file.
-puts "::: ANTON magicrc: Sourcing $pdk_magrc"
-source $pdk_magrc
+# Find out if the IHP PDK tech has already been loaded:
+set current_tech [tech name]
+
+if {$current_tech eq $env(PDK)} {
+    puts "::: ANTON magicrc: PDK '$current_tech' already loaded"
+} else {
+    # Load the PDK config:
+    # set sky_magrc [file normalize $env(PDK_MAGICRC)]
+    set pdk_magrc [file normalize $env(PDK_ROOT)/$env(PDK)/libs.tech/magic/$env(PDK).magicrc] ;# ihp-sg13g2 magicrc file.
+    puts "::: ANTON magicrc: Current tech is '$current_tech'; sourcing $pdk_magrc"
+    source $pdk_magrc
+}
 
 puts "::: ANTON magicrc: Setting Anton's prefs"
 snap user                                       ;# Turn on grid snapping.
@@ -28,4 +35,14 @@ macro Meta_XK_g       {grid 50nm; snap user}    ;# Define ALT+G key combo to sel
 puts ":::       ALT+G = snap to 50nm grid"
 macro Meta_Shift_XK_G {grid 10nm; snap user}    ;# Define SHIFT+ALT+G key combo to select 10nm grid, with snapping.
 puts "::: SHIFT+ALT+G = snap to 10nm grid"
-# view -100nm -100nm 1um 1um
+# After 300ms (i.e. after proper window init) try to set the view the way we like it:
+after 300 {
+    grid 50nm
+    snap user
+    # Check if this is a new blank cell:
+    set cell [cellname list self]
+    if {$cell eq "(UNNAMED)"} {
+        view -100nm -100nm 1um 1um
+    }
+}
+

@@ -19,8 +19,8 @@ echo "======= ext2spice lvs ======"
 ext2spice lvs
 echo "======= ext2spice cthresh 0 ======"
 # ext2spice cthresh 0 ; # Ignore caps below 1e-18 (normally 0, this should cut out ~36% of caps)
-# ext2spice cthresh 0.005 ; # Ignore caps below 5e-18
-ext2spice cthresh 0.025 ; # Ignore caps below 25e-18
+ext2spice cthresh 0.005 ; # Ignore caps below 5e-18
+# ext2spice cthresh 0.025 ; # Ignore caps below 25e-18
 #NOTE: Uri uses cthresh 10, while Matt uses 0 -- what units are these? According to Tim Edwards: fF
 
 echo "======= ext2spice extresist on ======"
