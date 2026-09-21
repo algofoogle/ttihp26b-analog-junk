@@ -1,0 +1,75 @@
+* NGSPICE file created from comparator_pex.ext - technology: ihp-sg13g2
+
+.subckt comparator_pex Vbias in_p in_n VGND VPWR out
+X0 diff R1 VPWR VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=0.5p ps=2.5u w=2u l=0.3u
+X1 VPWR R1 R1 VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=0.5p ps=2.5u w=2u l=0.3u
+X2 VPWR diff a_3050_980# VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=0.5p ps=2.5u w=2u l=0.3u
+X3 VPWR R1 diff VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=1.1p ps=5.1u w=2u l=0.3u
+X4 R2 in_p R1 VGND.t0 sg13_lv_nmos ad=1p pd=4.5u as=2.2p ps=9.1u w=4u l=0.3u
+X5 R1 R1 VPWR VPWR sg13_lv_pmos ad=1.1p pd=5.1u as=0.5p ps=2.5u w=2u l=0.3u
+X6 VGND.t4 Vbias a_3050_980# VGND.t3 sg13_lv_nmos ad=2.22p pd=10.1u as=1.1p ps=5.1u w=2u l=0.45u
+X7 VPWR diff a_3050_980# VPWR sg13_lv_pmos ad=1.1p pd=5.1u as=0.5p ps=2.5u w=2u l=0.3u
+X8 VGND.t6 a_3050_980# out VGND.t5 sg13_lv_nmos ad=0.225p pd=1.9u as=0.225p ps=1.9u w=0.5u l=0.15u
+X9 VPWR R1 R1 VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=1.1p ps=5.1u w=2u l=0.3u
+X10 R2 Vbias VGND.t2 VGND.t1 sg13_lv_nmos ad=1.1p pd=5.1u as=1.1p ps=5.1u w=2u l=0.45u
+X11 R1 R1 VPWR VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=0.5p ps=2.5u w=2u l=0.3u
+X12 a_3050_980# diff VPWR VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=0.5p ps=2.5u w=2u l=0.3u
+X13 diff R1 VPWR VPWR sg13_lv_pmos ad=1.1p pd=5.1u as=0.5p ps=2.5u w=2u l=0.3u
+X14 VPWR R1 diff VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=0.5p ps=2.5u w=2u l=0.3u
+X15 diff in_n R2 VGND.t0 sg13_lv_nmos ad=2.2p pd=9.1u as=1p ps=4.5u w=4u l=0.3u
+X16 a_3050_980# diff VPWR VPWR sg13_lv_pmos ad=0.5p pd=2.5u as=1.1p ps=5.1u w=2u l=0.3u
+X17 out a_3050_980# VPWR VPWR sg13_lv_pmos ad=0.6p pd=3.4u as=0.6p ps=3.4u w=1.2u l=0.15u
+R0 VGND.n5 VGND.t0 6044.22
+R1 VGND.t5 VGND.t3 466.387
+R2 VGND.t3 VGND.t4 222.714
+R3 VGND.t0 VGND.t1 88.2358
+R4 VGND.n5 VGND.t5 44.1181
+R5 VGND.n5 VGND.n4 26.0005
+R6 VGND.n6 VGND.n5 26.0005
+R7 VGND.n6 VGND.t6 9.5338
+R8 VGND.n4 VGND.t6 9.5338
+R9 VGND.n4 VGND.n2 4.85902
+R10 VGND.n7 VGND.n6 4.85902
+R11 VGND.n8 VGND.n7 2.97569
+R12 VGND.n0 VGND.n2 2.97569
+R13 VGND.n0 VGND.t2 2.92925
+R14 VGND.t2 VGND.n8 2.92925
+R15 VGND.t1 VGND.n1 2.46422
+R16 VGND.n7 VGND.n3 1.66274
+R17 VGND.n3 VGND.n2 1.6624
+R18 VGND.n1 VGND.n0 1.35428
+R19 VGND.n8 VGND.n1 1.35428
+R20 VGND.t4 VGND.n3 1.25558
+R21 VGND VGND.n0 0.0005
+C0 in_n VPWR 0.04754f
+C1 diff R2 0.16013f
+C2 Vbias R2 0.17395f
+C3 in_p VPWR 0.04749f
+C4 R2 in_n 0.1799f
+C5 out VPWR 0.10919f
+C6 VPWR R1 1.92409f
+C7 R2 in_p 0.1799f
+C8 diff a_3050_980# 0.17165f
+C9 R2 R1 0.16823f
+C10 Vbias a_3050_980# 0.32326f
+C11 Vbias diff 0.00803f
+C12 diff in_n 0.44828f
+C13 Vbias in_n 0.2306f
+C14 out a_3050_980# 0.16526f
+C15 Vbias in_p 0.2306f
+C16 Vbias out 0.04331f
+C17 in_n in_p 0.0326f
+C18 diff R1 0.37165f
+C19 Vbias R1 0.01373f
+C20 VPWR a_3050_980# 1.62717f
+C21 in_n R1 0.00547f
+C22 diff VPWR 1.87646f
+C23 Vbias VPWR 0.90927f
+C24 in_p R1 0.45382f
+C25 out VGND 3.08208f
+C26 VPWR VGND 2.14878f
+C27 R2 VGND 1.6571f
+C28 VGND.t6 VGND 2.37688f
+C29 VGND.t4 VGND 3.27713f
+.ends
+
