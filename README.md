@@ -19,6 +19,8 @@ For specifications and instructions, see the [analog specs page](https://tinytap
 
 ## How this project was created
 
+### Basic setup
+
 1.  Make sure you've got your PDK environment (esp. environment variables like `PDK_ROOT` and `PDK`) loaded correctly.
 2.  Go to https://github.com/tinyTapeout/ttihp-analog-template and "[Use this template](https://github.com/TinyTapeout/ttihp-analog-template/generate)"
 3.  [Enable GitHub Pages](https://tinytapeout.com/faq/#my-github-action-is-failing-on-the-pages-part) for the new repo.
@@ -48,6 +50,9 @@ For specifications and instructions, see the [analog specs page](https://tinytap
 12. Add the [`gds/`](./gds/) and [`lef/`](./lef/) files to the repo.
 13. Commit and push everything to GitHub, and let GitHub Actions run through the `custom_gds` job and `precheck`.
 
+### GDS art
+
+See [`art/README.md`](./art/README.md)
 
 ## Resources
 

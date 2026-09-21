@@ -16,7 +16,7 @@ python3 make_gds.py -i olaf.png -c olaf_artwork -o olaf.gds
 
 Note that `-c olaf_artwork` names the cell inside the GDS file.
 
-From here, this can be converted in Magic into a `.mag` cell that you can place in your layout, by first running `magic` and then issuing these commands in the TCL window:
+From here, this can be converted in Magic into a `.mag` cell (that you can later place in your layout) by first running `magic` and then issuing these commands in the TCL window:
 
 ```tcl
 gds read ../gds/olaf.gds
