@@ -2,7 +2,7 @@
 
 # ttihp26b analog junk in a 1x1 Tiny Tapeout tile
 
-Little analog experiments done as a custom layout using the IHP 130nm sg13g2 open PDK in a 1x1 Tiny Tapeout "digital only" tile.
+Little analog experiments (simple comparator, with inputs driven by two RDACs) done as a custom layout using the IHP 130nm sg13g2 open PDK in a 1x1 Tiny Tapeout "digital only" tile.
 
 * This project was generated from the ttihp-analog-template repo (read more [below](#how-this-project-was-created)).
 * [Read the documentation for this project](docs/info.md)
