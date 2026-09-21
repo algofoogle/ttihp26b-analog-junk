@@ -54,6 +54,14 @@ For specifications and instructions, see the [analog specs page](https://tinytap
 
 See [`art/README.md`](./art/README.md)
 
+
+### Basic comparator design notes
+
+*   Vbias for my tail current NFET (2u/0.39u):
+    *   Vbias=0.4705V when the mirror source NFET is fed from 1.2Vcc by a 30k R, for a ref current of 24.32uA (&plusmn; 0.2uA spikes during output edges) -- actual tail current ranges from 3.6uA to 24.5uA.
+    *   Vbias=0.4504V when fed by PFET 1.0u/0.3u, for Iref of 19.5uA
+
+
 ## Resources
 
 - [FAQ](https://tinytapeout.com/faq/)

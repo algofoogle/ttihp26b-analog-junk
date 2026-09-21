@@ -1,0 +1,58 @@
+** sch_path: /home/anton/projects/ttihp26b-analog-junk/xschem/tb_comparator.sch
+**.subckt tb_comparator
+V1 inp 0 pulse({vinlo-vnudge} {vinhi+vnudge} 0 100n 100n 20n 239n)
+R1 inp net3 1
+R2 out 0 1Meg
+Vvpwr VPWR 0 1.2
+x1 VPWR 0 out net2 net3 Vbias comparator
+R3 inn net2 1
+V3 inn 0 pulse({vinlo} {vinhi} 10n 100n 100n 20n 271n)
+XM3 net1 net1 0 0 sg13_lv_nmos w=2.00u l=0.39u ng=1 m=1 mm_ok=1
+Vvbref VBREF 0 1.2
+R4 VBREF net1 30k
+XM1 Vbias Vbias 0 0 sg13_lv_nmos w=2.00u l=0.39u ng=1 m=1 mm_ok=1
+XM2 Vbias Vbias VBREF VBREF sg13_lv_pmos w=1.00u l=0.30u ng=1 m=1 mm_ok=1
+**** begin user architecture code
+
+.lib cornerMOSlv.lib mos_tt
+
+
+.param temp=27
+.param vinlo=0.3
+.param vinhi=0.9
+.param vnudge=0.02
+.option savecurrents
+.control
+save
++ @r2[i] @n.x1.xm5.nsg13_lv_nmos[ids] @n.xm3.nsg13_lv_nmos[ids] @n.xm1.nsg13_lv_nmos[ids]
++ all
+tran 50p 5000n
+write tb_comparator.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  comparator.sym # of pins=6
+** sym_path: /home/anton/projects/ttihp26b-analog-junk/xschem/comparator.sym
+** sch_path: /home/anton/projects/ttihp26b-analog-junk/xschem/comparator.sch
+.subckt comparator VPWR VGND out in_n in_p Vbias
+*.iopin VPWR
+*.ipin in_p
+*.ipin in_n
+*.opin out
+*.iopin VGND
+*.ipin Vbias
+XM1 net2 in_p net1 VGND sg13_lv_nmos w=4.00u l=0.26u ng=1 m=1 mm_ok=1
+XM4 diff net2 VPWR VPWR sg13_lv_pmos w=8.00u l=0.26u ng=1 m=1 mm_ok=1
+XM5 net1 Vbias VGND VGND sg13_lv_nmos w=2.00u l=0.39u ng=1 m=1 mm_ok=1
+XM2 diff in_n net1 VGND sg13_lv_nmos w=4.00u l=0.26u ng=1 m=1 mm_ok=1
+XM3 net2 net2 VPWR VPWR sg13_lv_pmos w=8.00u l=0.26u ng=1 m=1 mm_ok=1
+XM6 diff_amp diff VPWR VPWR sg13_lv_pmos w=8.00u l=0.26u ng=1 m=1 mm_ok=1
+XM7 diff_amp Vbias VGND VGND sg13_lv_nmos w=2.00u l=0.39u ng=1 m=1 mm_ok=1
+XM8 out diff_amp VPWR VPWR sg13_lv_pmos w=1.20u l=0.13u ng=1 m=1 mm_ok=1
+XM9 out diff_amp VGND VGND sg13_lv_nmos w=0.50u l=0.13u ng=1 m=1 mm_ok=1
+.ends
+
+.end

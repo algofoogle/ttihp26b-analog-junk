@@ -17,12 +17,12 @@ N 340 -300 460 -300 {lab=#net1}
 N 460 -370 580 -370 {lab=VGND}
 N 460 -370 460 -330 {lab=VGND}
 N 340 -370 460 -370 {lab=VGND}
-N 580 -440 580 -400 {lab=#net2}
-N 380 -510 540 -510 {lab=#net3}
-N 340 -440 380 -440 {lab=#net3}
-N 380 -510 380 -440 {lab=#net3}
-N 340 -480 340 -440 {lab=#net3}
-N 340 -440 340 -400 {lab=#net3}
+N 580 -440 580 -400 {lab=diff}
+N 380 -510 540 -510 {lab=#net2}
+N 340 -440 380 -440 {lab=#net2}
+N 380 -510 380 -440 {lab=#net2}
+N 340 -480 340 -440 {lab=#net2}
+N 340 -440 340 -400 {lab=#net2}
 N 330 -510 340 -510 {lab=VPWR}
 N 330 -540 330 -510 {lab=VPWR}
 N 330 -540 340 -540 {lab=VPWR}
@@ -34,24 +34,24 @@ N 580 -580 580 -540 {lab=VPWR}
 N 460 -580 580 -580 {lab=VPWR}
 N 460 -620 460 -580 {lab=VPWR}
 N 340 -580 460 -580 {lab=VPWR}
-N 580 -440 680 -440 {lab=#net2}
-N 580 -480 580 -440 {lab=#net2}
-N 680 -510 680 -440 {lab=#net2}
-N 680 -510 720 -510 {lab=#net2}
+N 580 -440 680 -440 {lab=diff}
+N 580 -480 580 -440 {lab=diff}
+N 680 -510 680 -440 {lab=diff}
+N 680 -510 720 -510 {lab=diff}
 N 760 -510 770 -510 {lab=VPWR}
 N 770 -540 770 -510 {lab=VPWR}
 N 760 -540 770 -540 {lab=VPWR}
 N 760 -580 760 -540 {lab=VPWR}
 N 580 -580 760 -580 {lab=VPWR}
-N 760 -390 760 -280 {lab=#net4}
+N 760 -390 760 -280 {lab=diff_amp}
 N 760 -250 770 -250 {lab=VGND}
 N 770 -250 770 -220 {lab=VGND}
 N 760 -220 770 -220 {lab=VGND}
 N 760 -220 760 -180 {lab=VGND}
-N 880 -390 880 -330 {lab=#net4}
-N 760 -390 880 -390 {lab=#net4}
-N 760 -480 760 -390 {lab=#net4}
-N 880 -450 880 -390 {lab=#net4}
+N 880 -390 880 -330 {lab=diff_amp}
+N 760 -390 880 -390 {lab=diff_amp}
+N 760 -480 760 -390 {lab=diff_amp}
+N 880 -450 880 -390 {lab=diff_amp}
 N 920 -390 920 -360 {lab=out}
 N 920 -390 1000 -390 {lab=out}
 N 920 -420 920 -390 {lab=out}
@@ -64,6 +64,8 @@ N 920 -330 930 -330 {lab=VGND}
 N 930 -330 930 -300 {lab=VGND}
 N 920 -300 930 -300 {lab=VGND}
 N 920 -300 920 -180 {lab=VGND}
+N 560 -440 580 -440 {lab=diff}
+N 740 -390 760 -390 {lab=diff_amp}
 C {sg13g2_pr/sg13_lv_nmos.sym} 320 -370 0 0 {name=M1
 w=4.00u
 l=0.26u
@@ -158,3 +160,5 @@ C {ipin.sym} 620 -370 0 1 {name=p4 lab=in_n}
 C {opin.sym} 1000 -390 0 0 {name=p14 lab=out}
 C {iopin.sym} 220 -590 0 1 {name=p9 lab=VGND}
 C {ipin.sym} 220 -560 0 0 {name=p11 lab=Vbias}
+C {lab_pin.sym} 560 -440 0 0 {name=p12 sig_type=std_logic lab=diff}
+C {lab_pin.sym} 740 -390 0 0 {name=p15 sig_type=std_logic lab=diff_amp}
