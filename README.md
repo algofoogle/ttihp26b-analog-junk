@@ -60,6 +60,8 @@ See [`art/README.md`](./art/README.md)
 *   Vbias for my tail current NFET (2u/0.39u):
     *   Vbias=0.4705V when the mirror source NFET is fed from 1.2Vcc by a 30k R, for a ref current of 24.32uA (&plusmn; 0.2uA spikes during output edges) -- actual tail current ranges from 3.6uA to 24.5uA.
     *   Vbias=0.4504V when fed by PFET 1.0u/0.3u, for Iref of 19.5uA
+*   Original version had L as multiples of 0.13u, but now I went with 50nm rounding (for easy layout).
+    *   Iref PFET remains 1u/0.3u, mirror NFET is now 2u/0.45u: Vbias=0.4513V, Iref is 19.4uA.
 
 
 ## Resources

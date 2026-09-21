@@ -9,20 +9,20 @@ N 460 -250 470 -250 {lab=VGND}
 N 470 -250 470 -220 {lab=VGND}
 N 460 -220 470 -220 {lab=VGND}
 N 460 -220 460 -180 {lab=VGND}
-N 340 -340 340 -300 {lab=#net1}
-N 460 -300 580 -300 {lab=#net1}
-N 580 -340 580 -300 {lab=#net1}
-N 460 -300 460 -280 {lab=#net1}
-N 340 -300 460 -300 {lab=#net1}
+N 340 -340 340 -300 {lab=R2}
+N 460 -300 580 -300 {lab=R2}
+N 580 -340 580 -300 {lab=R2}
+N 460 -300 460 -280 {lab=R2}
+N 340 -300 460 -300 {lab=R2}
 N 460 -370 580 -370 {lab=VGND}
 N 460 -370 460 -330 {lab=VGND}
 N 340 -370 460 -370 {lab=VGND}
 N 580 -440 580 -400 {lab=diff}
-N 380 -510 540 -510 {lab=#net2}
-N 340 -440 380 -440 {lab=#net2}
-N 380 -510 380 -440 {lab=#net2}
-N 340 -480 340 -440 {lab=#net2}
-N 340 -440 340 -400 {lab=#net2}
+N 380 -510 540 -510 {lab=R1}
+N 340 -440 380 -440 {lab=R1}
+N 380 -510 380 -440 {lab=R1}
+N 340 -480 340 -440 {lab=R1}
+N 340 -440 340 -400 {lab=R1}
 N 330 -510 340 -510 {lab=VPWR}
 N 330 -540 330 -510 {lab=VPWR}
 N 330 -540 340 -540 {lab=VPWR}
@@ -66,9 +66,11 @@ N 920 -300 930 -300 {lab=VGND}
 N 920 -300 920 -180 {lab=VGND}
 N 560 -440 580 -440 {lab=diff}
 N 740 -390 760 -390 {lab=diff_amp}
+N 380 -440 420 -440 {lab=R1}
+N 580 -300 580 -280 {lab=R2}
 C {sg13g2_pr/sg13_lv_nmos.sym} 320 -370 0 0 {name=M1
 w=4.00u
-l=0.26u
+l=0.30u
 ng=1
 m=1
 mm_ok=1
@@ -77,7 +79,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_pmos.sym} 560 -510 0 0 {name=M4
 w=8.00u
-l=0.26u
+l=0.30u
 ng=1
 m=1
 mm_ok=1
@@ -86,7 +88,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 440 -250 0 0 {name=M5
 w=2.00u
-l=0.39u
+l=0.45u
 ng=1
 m=1
 mm_ok=1
@@ -95,7 +97,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 600 -370 0 1 {name=M2
 w=4.00u
-l=0.26u
+l=0.30u
 ng=1
 m=1
 mm_ok=1
@@ -106,7 +108,7 @@ C {lab_pin.sym} 460 -330 0 0 {name=p1 sig_type=std_logic lab=VGND}
 C {lab_pin.sym} 460 -180 0 0 {name=p2 sig_type=std_logic lab=VGND}
 C {sg13g2_pr/sg13_lv_pmos.sym} 360 -510 0 1 {name=M3
 w=8.00u
-l=0.26u
+l=0.30u
 ng=1
 m=1
 mm_ok=1
@@ -117,7 +119,7 @@ C {lab_pin.sym} 460 -620 0 0 {name=p5 sig_type=std_logic lab=VPWR}
 C {lab_pin.sym} 420 -250 0 0 {name=p6 sig_type=std_logic lab=Vbias}
 C {sg13g2_pr/sg13_lv_pmos.sym} 740 -510 0 0 {name=M6
 w=8.00u
-l=0.26u
+l=0.30u
 ng=1
 m=1
 mm_ok=1
@@ -126,7 +128,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 740 -250 0 0 {name=M7
 w=2.00u
-l=0.39u
+l=0.45u
 ng=1
 m=1
 mm_ok=1
@@ -137,7 +139,7 @@ C {lab_pin.sym} 760 -180 0 0 {name=p7 sig_type=std_logic lab=VGND}
 C {lab_pin.sym} 720 -250 0 0 {name=p8 sig_type=std_logic lab=Vbias}
 C {sg13g2_pr/sg13_lv_pmos.sym} 900 -450 0 0 {name=M8
 w=1.20u
-l=0.13u
+l=0.15u
 ng=1
 m=1
 mm_ok=1
@@ -146,7 +148,7 @@ spiceprefix=X
 }
 C {sg13g2_pr/sg13_lv_nmos.sym} 900 -330 0 0 {name=M9
 w=0.50u
-l=0.13u
+l=0.15u
 ng=1
 m=1
 mm_ok=1
@@ -162,3 +164,5 @@ C {iopin.sym} 220 -590 0 1 {name=p9 lab=VGND}
 C {ipin.sym} 220 -560 0 0 {name=p11 lab=Vbias}
 C {lab_pin.sym} 560 -440 0 0 {name=p12 sig_type=std_logic lab=diff}
 C {lab_pin.sym} 740 -390 0 0 {name=p15 sig_type=std_logic lab=diff_amp}
+C {lab_pin.sym} 420 -440 0 1 {name=p16 sig_type=std_logic lab=R1}
+C {lab_pin.sym} 580 -280 0 1 {name=p17 sig_type=std_logic lab=R2}

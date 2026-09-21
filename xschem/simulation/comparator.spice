@@ -1,0 +1,13 @@
+** sch_path: /home/anton/projects/ttihp26b-analog-junk/xschem/comparator.sch
+.subckt comparator VPWR VGND out in_n in_p Vbias
+*.PININFO VPWR:B in_p:I in_n:I out:O VGND:B Vbias:I
+MM1 R1 in_p R2 VGND sg13_lv_nmos w=4.00u l=0.30u ng=1
+MM4 diff R1 VPWR VPWR sg13_lv_pmos w=8.00u l=0.30u ng=1
+MM5 R2 Vbias VGND VGND sg13_lv_nmos w=2.00u l=0.45u ng=1
+MM2 diff in_n R2 VGND sg13_lv_nmos w=4.00u l=0.30u ng=1
+MM3 R1 R1 VPWR VPWR sg13_lv_pmos w=8.00u l=0.30u ng=1
+MM6 diff_amp diff VPWR VPWR sg13_lv_pmos w=8.00u l=0.30u ng=1
+MM7 diff_amp Vbias VGND VGND sg13_lv_nmos w=2.00u l=0.45u ng=1
+MM8 out diff_amp VPWR VPWR sg13_lv_pmos w=1.20u l=0.15u ng=1
+MM9 out diff_amp VGND VGND sg13_lv_nmos w=0.50u l=0.15u ng=1
+.ends

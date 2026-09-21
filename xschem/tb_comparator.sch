@@ -104,7 +104,7 @@ format="tcleval( @value )"
 value="
 .lib cornerMOSlv.lib mos_tt
 "}
-C {devices/code_shown.sym} 1010 -640 0 0 {name=NGSPICE only_toplevel=true
+C {devices/code_shown.sym} 1000 -640 0 0 {name=NGSPICE only_toplevel=true
 text_size_1=0.2
 value=".param temp=27
 .param vinlo=0.3
@@ -156,7 +156,7 @@ C {gnd.sym} 1140 -1000 0 0 {name=l1 lab=0}
 C {lab_pin.sym} 1140 -1060 0 0 {name=p7 sig_type=std_logic lab=inn}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1100 -780 0 1 {name=M3
 w=2.00u
-l=0.39u
+l=0.45u
 ng=1
 m=1
 mm_ok=1
@@ -176,7 +176,7 @@ C {gnd.sym} 1080 -710 0 0 {name=l8 lab=0}
 C {lab_pin.sym} 1320 -760 0 0 {name=p8 sig_type=std_logic lab=Vbias}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1620 -770 0 1 {name=M1
 w=2.00u
-l=0.39u
+l=0.45u
 ng=1
 m=1
 mm_ok=1
