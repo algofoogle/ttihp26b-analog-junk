@@ -9,5 +9,6 @@ else
         echo "You could get one from:"
         echo "https://github.com/algofoogle/ttihp26b-analog-junk/blob/main/magic/magicrc"
     fi
-    magic -dnull -noconsole -rcfile magicrc magic_init_project.tcl
+    #magic -dnull -noconsole -rcfile .magicrc magic_init_project.tcl
+    magic -dnull -noconsole magic_init_project.tcl
 fi

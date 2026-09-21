@@ -1,0 +1,31 @@
+** sch_path: /home/anton/projects/ttihp26b-analog-junk/xschem/r2r_dac.sch
+.subckt r2r_dac IN[7] IN[6] IN[5] IN[4] IN[3] IN[2] IN[1] IN[0] OUT VGND
+*.PININFO IN[7:0]:I VGND:B OUT:O
+XR0a IN[0] wi0 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR0b wi0 wJ0 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR1c wJ1 wJ0 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR0c wJ0 wg0 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR0d wg0 VGND VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR1a IN[1] wi1 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR1b wi1 wJ1 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR2c wJ2 wJ1 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR2a IN[2] wi2 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR2b wi2 wJ2 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR3c wJ3 wJ2 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR3a IN[3] wi3 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR3b wi3 wJ3 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR4c wJ4 wJ3 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR4a IN[4] wi4 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR4b wi4 wJ4 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR5c wJ5 wJ4 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR5a IN[5] wi5 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR5b wi5 wJ5 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR6c wJ6 wJ5 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR6a IN[6] wi6 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR6b wi6 wJ6 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR7c OUT wJ6 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR7a IN[7] wi7 VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XR7b wi7 OUT VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XRdummy1 VGND VGND VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+XRdummy2 VGND VGND VGND rhigh w=2u l=14.3u m=1 b=0 mm_ok=1
+.ends

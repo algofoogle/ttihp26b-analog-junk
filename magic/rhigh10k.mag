@@ -1,0 +1,47 @@
+magic
+tech ihp-sg13g2
+magscale 1 2
+timestamp 1789999724
+<< pwell >>
+rect 0 0 560 3190
+<< poly >>
+rect 80 3098 480 3112
+rect 80 3066 94 3098
+rect 466 3066 480 3098
+rect 80 3026 480 3066
+rect 80 126 480 166
+rect 80 94 94 126
+rect 466 94 480 126
+rect 80 80 480 94
+<< polycont >>
+rect 94 3066 466 3098
+rect 94 94 466 126
+<< xpolyres >>
+rect 80 166 480 3026
+<< metal1 >>
+rect 84 3102 476 3108
+rect 84 3046 94 3102
+rect 466 3046 476 3102
+rect 84 3045 476 3046
+rect 84 146 476 147
+rect 84 90 94 146
+rect 466 90 476 146
+rect 84 84 476 90
+<< via1 >>
+rect 94 3098 466 3102
+rect 94 3066 466 3098
+rect 94 3046 466 3066
+rect 94 126 466 146
+rect 94 94 466 126
+rect 94 90 466 94
+<< metal2 >>
+rect 94 3102 466 3111
+rect 94 3037 466 3046
+rect 94 146 466 155
+rect 94 81 466 90
+<< labels >>
+rlabel polycont 280 3082 280 3082 0 R1
+port 2 nsew
+rlabel polycont 280 110 280 110 0 R2
+port 3 nsew
+<< end >>

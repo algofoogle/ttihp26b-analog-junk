@@ -27,9 +27,10 @@ if {$project eq "tt_um_algofoogle_analog_junk"} {
     readnet verilog ../src/project.v $schem_netlist_file_handle
 
     lvs "$layout_netlist_file_handle $project" "$schem_netlist_file_handle $project" \
-        $::env(PDK_ROOT)/$::env(PDK)/libs.tech/netgen/$::env(PDK)_setup.tcl \
+        "tcl/lvs_setup_script.tcl" \
         $report_file \
         -blackbox
+        # $::env(PDK_ROOT)/$::env(PDK)/libs.tech/netgen/$::env(PDK)_setup.tcl
 
 } else {
 
@@ -39,8 +40,9 @@ if {$project eq "tt_um_algofoogle_analog_junk"} {
     readnet spice ../xschem/simulation/$project.spice $schem_netlist_file_handle
     
     lvs "$layout_netlist_file_handle $project" "$schem_netlist_file_handle $project" \
-        $::env(PDK_ROOT)/$::env(PDK)/libs.tech/netgen/$::env(PDK)_setup.tcl \
+        "tcl/lvs_setup_script.tcl" \
         $report_file \
         -blackbox
+        # $::env(PDK_ROOT)/$::env(PDK)/libs.tech/netgen/$::env(PDK)_setup.tcl
 
 }

@@ -1,0 +1,64 @@
+magic
+tech ihp-sg13g2
+magscale 1 2
+timestamp 1789994439
+<< nwell >>
+rect 234 1108 284 1162
+<< pwell >>
+rect 248 488 298 552
+rect 248 72 298 152
+<< metal1 >>
+rect -14 1106 46 1118
+rect -14 968 -8 1106
+rect 40 968 46 1106
+rect -14 956 46 968
+rect -30 500 30 520
+rect -30 140 -20 500
+rect 20 140 30 500
+rect -30 120 30 140
+<< via1 >>
+rect -8 968 40 1106
+rect -20 140 20 500
+<< metal2 >>
+rect 164 1152 284 1212
+rect 234 1112 284 1152
+rect -96 1110 138 1112
+rect -200 1106 138 1110
+rect -200 970 -8 1106
+rect -96 968 -8 970
+rect 40 968 138 1106
+rect -96 962 138 968
+rect 234 1110 460 1112
+rect 234 964 530 1110
+rect 234 924 284 964
+rect 164 864 284 924
+rect 460 820 530 964
+rect 460 740 630 820
+rect 160 532 298 592
+rect 248 510 298 532
+rect 460 510 530 740
+rect -200 500 120 510
+rect -200 140 -20 500
+rect 20 140 120 500
+rect 248 488 530 510
+rect 250 152 530 488
+rect -200 130 120 140
+rect 248 130 530 152
+rect 248 104 298 130
+rect 160 44 298 104
+use sg13_lv_nmos_WZWL4E  sg13_lv_nmos_WZWL4E_0
+timestamp 1789994250
+transform 1 0 185 0 1 318
+box -277 -410 277 410
+use sg13_lv_pmos_P4FHLC  sg13_lv_pmos_P4FHLC_0
+timestamp 1789994250
+transform 1 0 186 0 1 1038
+box -262 -310 262 310
+<< labels >>
+flabel metal2 550 740 630 820 0 FreeSans 240 0 0 0 Vbias
+port 0 nsew
+flabel metal2 -200 970 -110 1110 0 FreeSans 240 90 0 0 VPWR
+port 1 nsew
+flabel metal2 -200 130 -110 510 0 FreeSans 240 90 0 0 VGND
+port 2 nsew
+<< end >>

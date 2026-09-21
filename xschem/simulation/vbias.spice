@@ -1,0 +1,6 @@
+** sch_path: /home/anton/projects/ttihp26b-analog-junk/xschem/vbias.sch
+.subckt vbias VPWR VGND Vbias
+*.PININFO VPWR:B Vbias:O VGND:B
+MM1 Vbias Vbias VGND VGND sg13_lv_nmos w=2.00u l=0.45u ng=1
+MM2 Vbias Vbias VPWR VPWR sg13_lv_pmos w=1.00u l=0.30u ng=1
+.ends

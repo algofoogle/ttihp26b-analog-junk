@@ -1,0 +1,36 @@
+* NGSPICE file created from r2r_dac.ext - technology: ihp-sg13g2
+
+.subckt rhigh10k R1 R2 sub
+X0 R1 R2 sub rhigh l=14.3u w=2u
+.ends
+
+.subckt r2r_dac IN[0] IN[1] IN[2] IN[3] IN[4] IN[5] IN[6] IN[7] VGND OUT
+XRdummy1 VGND VGND VGND rhigh10k
+XRdummy2 VGND VGND VGND rhigh10k
+XR7a IN[7] R7b/R2 VGND rhigh10k
+XR6a R6b/R1 IN[6] VGND rhigh10k
+XR7b OUT R7b/R2 VGND rhigh10k
+XR5a IN[5] R5b/R2 VGND rhigh10k
+XR6b R6b/R1 R7c/R2 VGND rhigh10k
+XR7c OUT R7c/R2 VGND rhigh10k
+XR3a IN[3] R3b/R2 VGND rhigh10k
+XR4a R4b/R1 IN[4] VGND rhigh10k
+XR4b R4b/R1 R5c/R2 VGND rhigh10k
+XR5b R6c/R1 R5b/R2 VGND rhigh10k
+XR5c R6c/R1 R5c/R2 VGND rhigh10k
+XR6c R6c/R1 R7c/R2 VGND rhigh10k
+XR2a R2b/R1 IN[2] VGND rhigh10k
+XR3b R4c/R1 R3b/R2 VGND rhigh10k
+XR4c R4c/R1 R5c/R2 VGND rhigh10k
+XR1a IN[1] R1b/R2 VGND rhigh10k
+XR2b R2b/R1 R3c/R2 VGND rhigh10k
+XR3c R4c/R1 R3c/R2 VGND rhigh10k
+XR0a R0b/R1 IN[0] VGND rhigh10k
+XR1b R2c/R1 R1b/R2 VGND rhigh10k
+XR2c R2c/R1 R3c/R2 VGND rhigh10k
+XR0b R0b/R1 R1c/R2 VGND rhigh10k
+XR1c R2c/R1 R1c/R2 VGND rhigh10k
+XR0c R0d/R1 R1c/R2 VGND rhigh10k
+XR0d R0d/R1 VGND VGND rhigh10k
+.ends
+

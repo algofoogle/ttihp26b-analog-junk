@@ -76,21 +76,6 @@ N 1550 -1140 1550 -1120 {lab=Vbias_ALT}
 N 1550 -1230 1550 -1200 {lab=VBREF}
 N 1590 -1120 1590 -1070 {lab=Vbias_ALT}
 N 1590 -1070 1610 -1070 {lab=Vbias_ALT}
-N 1050 -800 1060 -800 {lab=0}
-N 1050 -800 1050 -770 {lab=0}
-N 1050 -770 1060 -770 {lab=0}
-N 1060 -770 1060 -730 {lab=0}
-N 1060 -850 1060 -830 {lab=Vbias}
-N 1060 -850 1100 -850 {lab=Vbias}
-N 1060 -870 1060 -850 {lab=Vbias}
-N 1100 -850 1100 -800 {lab=Vbias}
-N 1100 -800 1120 -800 {lab=Vbias}
-N 1060 -960 1060 -930 {lab=VBREF}
-N 1020 -900 1020 -850 {lab=Vbias}
-N 1020 -850 1060 -850 {lab=Vbias}
-N 1060 -900 1070 -900 {lab=VBREF}
-N 1070 -930 1070 -900 {lab=VBREF}
-N 1060 -930 1070 -930 {lab=VBREF}
 N 1610 -1070 1610 -1010 {lab=Vbias_ALT}
 N 1350 -840 1380 -840 {lab=out}
 N 1620 -840 1670 -840 {lab=out_pex}
@@ -121,7 +106,7 @@ tclcommand="xschem raw_read $netlist_dir/tb_comparator.raw tran"
 }
 C {vsource.sym} 1140 -1140 0 0 {name=V1 value="pulse(\{vinlo-vnudge\} \{vinhi+vnudge\} 0 100n 100n 20n 239n)" savecurrent=false}
 C {res.sym} 1230 -890 0 1 {name=R1
-value=1
+value=100k
 footprint=1206
 device=resistor
 m=1}
@@ -142,7 +127,7 @@ C {comparator.sym} 1250 -840 0 0 {name=x1}
 C {lab_pin.sym} 1290 -880 1 0 {name=p6 sig_type=std_logic lab=VPWR}
 C {gnd.sym} 1290 -800 0 0 {name=l5 lab=0}
 C {res.sym} 1230 -790 2 0 {name=R3
-value=1
+value=100k
 footprint=1206
 device=resistor
 m=1}
@@ -170,30 +155,9 @@ device=resistor
 m=1}
 C {gnd.sym} 1550 -1000 0 0 {name=l8 lab=0}
 C {lab_pin.sym} 1270 -800 3 0 {name=p8 sig_type=std_logic lab=Vbias}
-C {sg13g2_pr/sg13_lv_nmos.sym} 1080 -800 0 1 {name=M1
-w=2.00u
-l=0.45u
-ng=1
-m=1
-mm_ok=1
-model=sg13_lv_nmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1060 -960 0 0 {name=p11 sig_type=std_logic lab=VBREF}
-C {lab_pin.sym} 1120 -800 0 1 {name=p13 sig_type=std_logic lab=Vbias}
-C {gnd.sym} 1060 -730 0 0 {name=l7 lab=0}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1040 -900 0 0 {name=M2
-w=1.00u
-l=0.30u
-ng=1
-m=1
-mm_ok=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
 C {lab_pin.sym} 1610 -1010 0 1 {name=p12 sig_type=std_logic lab=Vbias_ALT}
 C {res.sym} 1500 -890 0 1 {name=R5
-value=1
+value=100k
 footprint=1206
 device=resistor
 m=1}
@@ -213,9 +177,13 @@ tclcommand="textwindow [file normalize ../magic/comparator.sim.spice]"
 C {lab_pin.sym} 1560 -880 1 0 {name=p16 sig_type=std_logic lab=VPWR}
 C {gnd.sym} 1560 -800 0 0 {name=l10 lab=0}
 C {res.sym} 1500 -790 2 0 {name=R7
-value=1
+value=100k
 footprint=1206
 device=resistor
 m=1}
 C {lab_pin.sym} 1500 -760 3 0 {name=p17 sig_type=std_logic lab=inn}
 C {lab_pin.sym} 1540 -800 3 0 {name=p18 sig_type=std_logic lab=Vbias}
+C {vbias.sym} 1060 -840 0 0 {name=x3}
+C {lab_pin.sym} 1060 -890 1 0 {name=p11 sig_type=std_logic lab=VBREF}
+C {gnd.sym} 1060 -790 0 0 {name=l7 lab=0}
+C {lab_pin.sym} 1120 -840 2 0 {name=p13 sig_type=std_logic lab=Vbias}
