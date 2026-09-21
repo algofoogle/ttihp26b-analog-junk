@@ -1,0 +1,41 @@
+* NGSPICE file created from comparator.ext - technology: ihp-sg13g2
+
+.subckt comparator Vbias in_p in_n VGND VPWR out
+X0 diff R1 VPWR VPWR sg13_lv_pmos ad=1.08604p pd=5.75167u as=1.24087p ps=5.4127u w=2u l=0.3u
+**devattr s=20000,500 d=20000,500
+X1 VPWR R1 R1 VPWR sg13_lv_pmos ad=1.24087p pd=5.4127u as=1.19354p ps=4.66833u w=2u l=0.3u
+**devattr s=20000,500 d=20000,500
+X2 VPWR diff a_3050_980# VPWR sg13_lv_pmos ad=1.24087p pd=5.4127u as=1.816p ps=8.48u w=2u l=0.3u
+**devattr s=20000,500 d=20000,500
+X3 VPWR R1 diff VPWR sg13_lv_pmos ad=1.24087p pd=5.4127u as=1.08604p ps=5.75167u w=2u l=0.3u
+**devattr s=44000,1020 d=20000,500
+X4 R2 in_p R1 VGND sg13_lv_nmos ad=1.064p pd=5.64u as=2.38708p ps=9.33667u w=4u l=0.3u
+**devattr s=88000,1820 d=40000,900
+X5 R1 R1 VPWR VPWR sg13_lv_pmos ad=1.19354p pd=4.66833u as=1.24087p ps=5.4127u w=2u l=0.3u
+**devattr s=20000,500 d=44000,1020
+X6 VPWR diff a_3050_980# VPWR sg13_lv_pmos ad=1.24087p pd=5.4127u as=1.816p ps=8.48u w=2u l=0.3u
+**devattr s=20000,500 d=44000,1020
+X7 VGND a_3050_980# out VGND sg13_lv_nmos ad=3.96389p pd=17.38889u as=0.22794p ps=1.20588u w=0.5u l=0.15u
+**devattr s=9000,380 d=9000,380
+X8 VPWR R1 R1 VPWR sg13_lv_pmos ad=1.24087p pd=5.4127u as=1.19354p ps=4.66833u w=2u l=0.3u
+**devattr s=44000,1020 d=20000,500
+X9 R2 Vbias VGND VGND sg13_lv_nmos ad=0.532p pd=2.82u as=15.85555p ps=69.55556u w=2u l=0.45u
+**devattr s=44000,1020 d=44000,1020
+X10 R1 R1 VPWR VPWR sg13_lv_pmos ad=1.19354p pd=4.66833u as=1.24087p ps=5.4127u w=2u l=0.3u
+**devattr s=20000,500 d=20000,500
+X11 a_3050_980# diff VPWR VPWR sg13_lv_pmos ad=1.816p pd=8.48u as=1.24087p ps=5.4127u w=2u l=0.3u
+**devattr s=20000,500 d=20000,500
+X12 diff R1 VPWR VPWR sg13_lv_pmos ad=1.08604p pd=5.75167u as=1.24087p ps=5.4127u w=2u l=0.3u
+**devattr s=20000,500 d=44000,1020
+X13 VPWR R1 diff VPWR sg13_lv_pmos ad=1.24087p pd=5.4127u as=1.08604p ps=5.75167u w=2u l=0.3u
+**devattr s=20000,500 d=20000,500
+X14 diff in_n R2 VGND sg13_lv_nmos ad=2.17208p pd=11.50333u as=1.064p ps=5.64u w=4u l=0.3u
+**devattr s=40000,900 d=88000,1820
+X15 a_3050_980# diff VPWR VPWR sg13_lv_pmos ad=1.816p pd=8.48u as=1.24087p ps=5.4127u w=2u l=0.3u
+**devattr s=44000,1020 d=20000,500
+X16 out a_3050_980# VPWR VPWR sg13_lv_pmos ad=0.54706p pd=2.89412u as=0.74452p ps=3.24762u w=1.2u l=0.15u
+**devattr s=24000,680 d=24000,680
+X17 VGND Vbias a_3050_980# VGND sg13_lv_nmos ad=15.85555p pd=69.55556u as=1.816p ps=8.48u w=2u l=0.45u
+**devattr s=44000,1020 d=44000,1020
+.ends
+

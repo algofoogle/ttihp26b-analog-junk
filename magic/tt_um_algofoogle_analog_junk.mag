@@ -524,19 +524,19 @@ rect 960 20120 29260 20560
 rect 29700 20120 29780 20560
 rect 960 20040 29780 20120
 rect 960 1000 1560 20040
-use comparator  comparator_0
+use comparator  comparator
 timestamp 1790011746
 transform 0 -1 19430 1 0 25300
 box 0 0 5070 2380
+use r2r_dac  ndac
+timestamp 1790005985
+transform -1 0 28218 0 1 16020
+box -430 -20 15398 3650
 use r2r_dac  pdac
 timestamp 1790005985
 transform -1 0 39088 0 1 21100
 box -430 -20 15398 3650
-use r2r_dac  r2r_dac_0
-timestamp 1790005985
-transform -1 0 28218 0 1 16020
-box -430 -20 15398 3650
-use vbias  vbias_0
+use vbias  vbias
 timestamp 1790011746
 transform 1 0 16780 0 1 24362
 box -200 -92 630 1348
