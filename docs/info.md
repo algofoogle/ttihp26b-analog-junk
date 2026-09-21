@@ -9,12 +9,13 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-A custom GDS layout implements some simple analog circuits with an interface to the Tiny Tapeout digital pins of a 1x1 tile.
+A custom GDS layout implements some simple analog circuits with an interface to the Tiny Tapeout digital pins of a 1x1 tile. In particular `ui_in` goes to an 8-bit RDAC, as does `uio_in`, and together they form the positive and negative inputs to a comparator whose output is on `uo_out[7]`.
 
 ## How to test
 
-Various `ui_in` inputs select parts of the analog circuit and the `uo_out` pins reflect results.
+Try comparing values on `ui_in` with those on `uio_in` -- if `ui_in` is greater, `uo_out[7]` should go high. Note that the comparator is generally considered to be reliable for voltages in the range of 0.3V to 0.9V internally -- DAC codes 64..192.
 
 ## External hardware
 
-Maybe an oscilloscope for carefully monitoring things, but otherwise MicroPython scripts run on the Tiny Tapeout demo board can drive the thing and gather results. For more info, see the original repo (https://github.com/algofoogle/ttihp26b-analog-junk).
+You'll need the Tiny Tapeout demo board to assert values on the bidirectional pins, but other than that no external hardware is required.
+

@@ -1,0 +1,218 @@
+
+Circuit 1 cell sg13_lv_pmos and Circuit 2 cell sg13_lv_pmos are black boxes.
+
+Subcircuit pins:
+Circuit 1: sg13_lv_pmos                    |Circuit 2: sg13_lv_pmos                    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13_lv_pmos and sg13_lv_pmos are equivalent.
+
+Circuit 1 cell sg13_lv_nmos and Circuit 2 cell sg13_lv_nmos are black boxes.
+
+Subcircuit pins:
+Circuit 1: sg13_lv_nmos                    |Circuit 2: sg13_lv_nmos                    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sg13_lv_nmos and sg13_lv_nmos are equivalent.
+
+Circuit 1 cell rhigh and Circuit 2 cell rhigh are black boxes.
+
+Subcircuit pins:
+Circuit 1: rhigh                           |Circuit 2: rhigh                           
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes rhigh and rhigh are equivalent.
+Flattening unmatched subcell sg13_lv_pmos_P4FHLC in circuit vbias (0)(1 instance)
+Flattening unmatched subcell sg13_lv_nmos_WZWL4E in circuit vbias (0)(1 instance)
+
+Subcircuit summary:
+Circuit 1: vbias                           |Circuit 2: vbias                           
+-------------------------------------------|-------------------------------------------
+sg13_lv_pmos (1)                           |sg13_lv_pmos (1)                           
+sg13_lv_nmos (1)                           |sg13_lv_nmos (1)                           
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 3                          |Number of nets: 3                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: vbias                           |Circuit 2: vbias                           
+-------------------------------------------|-------------------------------------------
+Vbias                                      |Vbias                                      
+sub                                        |VGND **Mismatch**                          
+VPWR                                       |VPWR                                       
+---------------------------------------------------------------------------------------
+Cell pin lists for vbias and vbias altered to match.
+Device classes vbias and vbias are equivalent.
+
+Class comparator (0):  Merged 9 parallel devices.
+Subcircuit summary:
+Circuit 1: comparator                      |Circuit 2: comparator                      
+-------------------------------------------|-------------------------------------------
+sg13_lv_pmos (13->4)                       |sg13_lv_pmos (4)                           
+sg13_lv_nmos (5)                           |sg13_lv_nmos (5)                           
+Number of devices: 9                       |Number of devices: 9                       
+Number of nets: 10                         |Number of nets: 10                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: comparator                      |Circuit 2: comparator                      
+-------------------------------------------|-------------------------------------------
+Vbias                                      |Vbias                                      
+out                                        |out                                        
+in_p                                       |in_p                                       
+in_n                                       |in_n                                       
+VGND                                       |VGND                                       
+VPWR                                       |VPWR                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes comparator and comparator are equivalent.
+Flattening unmatched subcell rhigh10k in circuit r2r_dac (0)(27 instances)
+
+Class r2r_dac (0):  Merged 1 parallel devices.
+Class r2r_dac (0):  Merged 9 series devices.
+Class r2r_dac (1):  Merged 1 parallel devices.
+Class r2r_dac (1):  Merged 9 series devices.
+Subcircuit summary:
+Circuit 1: r2r_dac                         |Circuit 2: r2r_dac                         
+-------------------------------------------|-------------------------------------------
+rhigh (27->17)                             |rhigh (27->17)                             
+Number of devices: 17                      |Number of devices: 17                      
+Number of nets: 17                         |Number of nets: 17                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: r2r_dac                         |Circuit 2: r2r_dac                         
+-------------------------------------------|-------------------------------------------
+OUT                                        |OUT                                        
+IN[0]                                      |IN[0]                                      
+IN[1]                                      |IN[1]                                      
+IN[2]                                      |IN[2]                                      
+IN[4]                                      |IN[4]                                      
+IN[3]                                      |IN[3]                                      
+IN[5]                                      |IN[5]                                      
+IN[6]                                      |IN[6]                                      
+IN[7]                                      |IN[7]                                      
+VGND                                       |VGND                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes r2r_dac and r2r_dac are equivalent.
+
+Cell tt_um_algofoogle_analog_junk (0) disconnected node: clk
+Cell tt_um_algofoogle_analog_junk (0) disconnected node: ena
+Cell tt_um_algofoogle_analog_junk (0) disconnected node: rst_n
+Cell tt_um_algofoogle_analog_junk (1) disconnected node: ena
+Cell tt_um_algofoogle_analog_junk (1) disconnected node: clk
+Cell tt_um_algofoogle_analog_junk (1) disconnected node: rst_n
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Removing zero-valued device r from cell tt_um_algofoogle_analog_junk (0) makes a better match
+Making another compare attempt.
+
+Cell tt_um_algofoogle_analog_junk (0) disconnected node: clk
+Cell tt_um_algofoogle_analog_junk (0) disconnected node: ena
+Cell tt_um_algofoogle_analog_junk (0) disconnected node: rst_n
+Cell tt_um_algofoogle_analog_junk (1) disconnected node: ena
+Cell tt_um_algofoogle_analog_junk (1) disconnected node: clk
+Cell tt_um_algofoogle_analog_junk (1) disconnected node: rst_n
+Subcircuit summary:
+Circuit 1: tt_um_algofoogle_analog_junk    |Circuit 2: tt_um_algofoogle_analog_junk    
+-------------------------------------------|-------------------------------------------
+vbias (1)                                  |vbias (1)                                  
+comparator (1)                             |comparator (1)                             
+r2r_dac (2)                                |r2r_dac (2)                                
+Number of devices: 4                       |Number of devices: 4                       
+Number of nets: 22                         |Number of nets: 22                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: tt_um_algofoogle_analog_junk    |Circuit 2: tt_um_algofoogle_analog_junk    
+-------------------------------------------|-------------------------------------------
+uio_in[7]                                  |uio_in[7]                                  
+ui_in[7]                                   |ui_in[7]                                   
+uio_in[6]                                  |uio_in[6]                                  
+ui_in[6]                                   |ui_in[6]                                   
+uio_in[5]                                  |uio_in[5]                                  
+ui_in[5]                                   |ui_in[5]                                   
+uio_in[4]                                  |uio_in[4]                                  
+ui_in[4]                                   |ui_in[4]                                   
+uio_in[3]                                  |uio_in[3]                                  
+ui_in[3]                                   |ui_in[3]                                   
+uio_in[2]                                  |uio_in[2]                                  
+ui_in[2]                                   |ui_in[2]                                   
+uio_in[1]                                  |uio_in[1]                                  
+ui_in[1]                                   |ui_in[1]                                   
+uio_in[0]                                  |uio_in[0]                                  
+ui_in[0]                                   |ui_in[0]                                   
+uo_out[7]                                  |uo_out[7]                                  
+uio_oe[0]                                  |uio_oe[0]                                  
+VDPWR                                      |VDPWR                                      
+clk                                        |clk                                        
+ena                                        |ena                                        
+rst_n                                      |rst_n                                      
+uio_oe[1]                                  |uio_oe[1]                                  
+uio_oe[2]                                  |uio_oe[2]                                  
+uio_oe[3]                                  |uio_oe[3]                                  
+uio_oe[4]                                  |uio_oe[4]                                  
+uio_oe[5]                                  |uio_oe[5]                                  
+uio_oe[6]                                  |uio_oe[6]                                  
+uio_oe[7]                                  |uio_oe[7]                                  
+uio_out[0]                                 |uio_out[0]                                 
+uio_out[1]                                 |uio_out[1]                                 
+uio_out[2]                                 |uio_out[2]                                 
+uio_out[3]                                 |uio_out[3]                                 
+uio_out[4]                                 |uio_out[4]                                 
+uio_out[5]                                 |uio_out[5]                                 
+uio_out[6]                                 |uio_out[6]                                 
+uio_out[7]                                 |uio_out[7]                                 
+uo_out[0]                                  |uo_out[0]                                  
+uo_out[1]                                  |uo_out[1]                                  
+uo_out[2]                                  |uo_out[2]                                  
+uo_out[3]                                  |uo_out[3]                                  
+uo_out[4]                                  |uo_out[4]                                  
+uo_out[5]                                  |uo_out[5]                                  
+uo_out[6]                                  |uo_out[6]                                  
+VGND                                       |VGND                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes tt_um_algofoogle_analog_junk and tt_um_algofoogle_analog_junk are equivalent.
+
+Final result: Circuits match uniquely.
+.

@@ -16,7 +16,10 @@ if {$project eq "tt_um_algofoogle_analog_junk"} {
     # # Add spice files of any analog block(s), e.g:
     # readnet spice ../xschem/simulation/ringosc.spice $schem_netlist_file_handle
     # readnet spice ../xschem/simulation/csdac255.spice $schem_netlist_file_handle
-    readnet spice ../xschem/simulation/inverter.spice $schem_netlist_file_handle
+    # readnet spice ../xschem/simulation/inverter.spice $schem_netlist_file_handle
+    readnet spice ../xschem/simulation/comparator.spice $schem_netlist_file_handle
+    readnet spice ../xschem/simulation/vbias.spice $schem_netlist_file_handle
+    readnet spice ../xschem/simulation/r2r_dac.spice $schem_netlist_file_handle
 
     # # Add GL verilog of digital block(s) (i.e. flat file from LibreLane hardening):
     # readnet verilog ../verilog/gl/digital.pnl.v $schem_netlist_file_handle

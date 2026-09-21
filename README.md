@@ -64,6 +64,14 @@ See [`art/README.md`](./art/README.md)
     *   Iref PFET remains 1u/0.3u, mirror NFET is now 2u/0.45u: Vbias=0.4513V, Iref is 19.4uA.
 
 
+## A note on LVS
+
+I often find that Magic doesn't extract all "shorted" resistors (those with 0R) when using the IHP PDK. It will sometimes just do 1, and leave any other shorted nodes disconnected. For that reason I manually edited [`magic/tt_um_algofoogle_analog_junk.lvs.spice`](./magic/tt_um_algofoogle_analog_junk.lvs.spice) to add the missing 0R resistors at the bottom, and ran the top-level LVS like this:
+
+```bash
+netgen -batch eval 'set project tt_um_algofoogle_analog_junk ; set report_file "top.lvs.report" ; source tcl/lvs_netgen.tcl'
+```
+
 ## Resources
 
 - [FAQ](https://tinytapeout.com/faq/)

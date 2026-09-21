@@ -1,7 +1,7 @@
 magic
 tech ihp-sg13g2
 magscale 1 2
-timestamp 1790011746
+timestamp 1790015185
 << metal2 >>
 rect 18200 30560 18280 30570
 rect 18200 30250 18280 30410
@@ -525,19 +525,23 @@ rect 29700 20120 29780 20560
 rect 960 20040 29780 20120
 rect 960 1000 1560 20040
 use comparator  comparator
-timestamp 1790011746
+timestamp 1790015185
 transform 0 -1 19430 1 0 25300
 box 0 0 5070 2380
+use lily_and_duck  lily_and_duck_0
+timestamp 1790015185
+transform 1 0 3088 0 1 1924
+box 432 336 35280 13248
 use r2r_dac  ndac
-timestamp 1790005985
+timestamp 1790015185
 transform -1 0 28218 0 1 16020
 box -430 -20 15398 3650
 use r2r_dac  pdac
-timestamp 1790005985
+timestamp 1790015185
 transform -1 0 39088 0 1 21100
 box -430 -20 15398 3650
 use vbias  vbias
-timestamp 1790011746
+timestamp 1790015185
 transform 1 0 16780 0 1 24362
 box -200 -92 630 1348
 << labels >>
