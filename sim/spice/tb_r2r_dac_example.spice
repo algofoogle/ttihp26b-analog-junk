@@ -1,0 +1,20 @@
+Example r2r_dac TB: Convert analog sine to digital inputs, then back to digital via ideal & PEX DAC instances
+
+.lib cornerRES.lib res_typ $ NOTE: Can use res_stat for statistical (Monte-Carlo-Like) modeling instead.
+
+.include "behavioural_adc_8b.spice"
+.include "../../xschem/simulation/r2r_dac.spice"
+.include "../../magic/r2r_dac.sim.spice"
+
+V1 vin GND SIN(0.6 0.6 1e6)
+
+Xadc vin d0 d1 d2 d3 d4 d5 d6 d7 behavioural_adc_8b
+Xdac d7 d6 d5 d4 d3 d2 d1 d0 vout GND r2r_dac
+Xdacpex d0 d1 d2 d3 d4 d5 d6 d7 GND voutpex r2r_dac_pex
+
+.control
+tran 100p 5u
+save all
+write tb_r2r_dac_example.raw
+.endc
+

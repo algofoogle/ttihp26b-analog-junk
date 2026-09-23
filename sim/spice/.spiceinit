@@ -1,0 +1,36 @@
+*  a custom spiceinit file for IHP-Open-PDK 
+
+* export PDK_ROOT and PDK environmental variables first and add it to your .bashrc
+* export PDK_ROOT= installation_specific_directory/IHP-Open-PDK
+* export PDK=ihp-sg13g2 
+
+setcs sourcepath = (  $sourcepath $PDK_ROOT/$PDK/libs.tech/ngspice/models $PDK_ROOT/ihp-sg13g2/libs.ref/sg13g2_stdcell/spice )
+*echo $sourcepath
+
+*option tnom=28
+*option list
+
+* KLU solver still do not work correctly for every simulation,
+* BUT Anton turned it on anyway for this design, to speed it up.
+* Hopefully it works OK in this case...
+option klu             ; select KLU as matrix solver 
+set num_threads=20     ; CPU processor cores available
+*set ngbehavior=hsa     ; set compatibility for reading PDK libs
+*set ng_nomodcheck      ; don't check the model parameters
+*option noinit          ; don't print operating point data
+
+
+*option node
+*option opts
+*option warn=1
+*option maxwarns=10
+*option savecurrents
+
+*set ngbehavior=hsa
+*set noinit
+
+* add OSDI 
+osdi  '$PDK_ROOT/$PDK/libs.tech/ngspice/osdi/psp103_nqs.osdi'
+osdi  '$PDK_ROOT/$PDK/libs.tech/ngspice/osdi/r3_cmc.osdi'
+osdi  '$PDK_ROOT/$PDK/libs.tech/ngspice/osdi/mosvar.osdi'
+

@@ -1,0 +1,39 @@
+* Behavioural ADC for simulation TB driving.
+* Takes in a voltage (vin) in the range [0,1.2] and outputs
+* 8-bit digital 1.2V logic levels. Also applies finite
+* edge rates using RC filtering.
+.subckt behavioural_adc_8b vin d0 d1 d2 d3 d4 d5 d6 d7
+.param VREF=1.2
+.param ROUT=100
+.param COUT=5p
+* Normalised input, clamped to 0 <= x < 1
+* For each bit:
+*     bit = floor(x*K) - 2*floor(x*K/2)
+* where K = 256,128,...,2
+B0 q0 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*256) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*128))
+B1 q1 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*128) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*64))
+B2 q2 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*64) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*32))
+B3 q3 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*32) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*16))
+B4 q4 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*16) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*8))
+B5 q5 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*8) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*4))
+B6 q6 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*4) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*2))
+B7 q7 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*2) - 2*floor(min(max(V(vin)/VREF,0),0.999999)))
+* Finite output impedance / edge rate
+R0 q0 d0 {ROUT}
+R1 q1 d1 {ROUT}
+R2 q2 d2 {ROUT}
+R3 q3 d3 {ROUT}
+R4 q4 d4 {ROUT}
+R5 q5 d5 {ROUT}
+R6 q6 d6 {ROUT}
+R7 q7 d7 {ROUT}
+C0 d0 0 {COUT}
+C1 d1 0 {COUT}
+C2 d2 0 {COUT}
+C3 d3 0 {COUT}
+C4 d4 0 {COUT}
+C5 d5 0 {COUT}
+C6 d6 0 {COUT}
+C7 d7 0 {COUT}
+.ends ideal_adc8
+
