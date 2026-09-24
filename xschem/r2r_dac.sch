@@ -12,7 +12,7 @@ L=14.3um
 => R=~10k} 70 -300 0 0 0.4 0.4 {}
 T {NOTE:
 1. The 'body' property of all resistors is changed from the default 'sub!' to 'VGND', to make Magic/Netgen LVS work.
-2. tcl/lvs_setup_script.tcl removes mm_ok properites (used for sim, not LVS).
+2. tcl/lvs_setup_script.tcl masks out mm_ok properites during LVS (as these are used for sim, but trip up Netgen LVS).
 } 600 -500 0 0 0.2 0.2 {}
 T {Dummy devices for consistent layout} 220 -520 0 0 0.2 0.2 {}
 N 300 -260 300 -240 {lab=wi0}

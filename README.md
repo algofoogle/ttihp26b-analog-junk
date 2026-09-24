@@ -1,15 +1,17 @@
 ![](../../workflows/gds/badge.svg) ![](../../workflows/docs/badge.svg)
 
-# ttihp26b analog junk in a 1x1 Tiny Tapeout tile
+# ttihp26b analog comparator driven by two 8b DACs in a 1x1 Tiny Tapeout tile
 
-Little analog experiments (simple comparator, with inputs driven by two RDACs) done as a custom layout using the IHP 130nm sg13g2 open PDK in a 1x1 Tiny Tapeout "digital only" tile.
+![tt_um_algofoogle_analog_junk custom GDS layout](./docs/layout.png)
 
-* This project was generated from the ttihp-analog-template repo (read more [below](#how-this-project-was-created)).
+Custom analog layout using the IHP sg13g2 open PDK, implementing a basic comparator whose inputs are driven by two 8-bit R2R DACs, all within a Tiny Tapeout 1x1 "digital only" tile.
+
+* This project was built upon the ttihp-analog-template repo (read more [below](#how-this-project-was-created)).
 * [Read the documentation for this project](docs/info.md)
 
 ## What is Tiny Tapeout?
 
-Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your digital designs manufactured on a real chip.
+Tiny Tapeout is an educational project that aims to make it easier and cheaper than ever to get your VLSI designs manufactured on a real chip.
 
 To learn more and get started, visit https://tinytapeout.com.
 
