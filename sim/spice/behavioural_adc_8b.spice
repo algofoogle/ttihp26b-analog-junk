@@ -2,22 +2,25 @@
 * Takes in a voltage (vin) in the range [0,1.2] and outputs
 * 8-bit digital 1.2V logic levels. Also applies finite
 * edge rates using RC filtering.
-.subckt behavioural_adc_8b vin d0 d1 d2 d3 d4 d5 d6 d7
+.subckt behavioural_adc_8b vin d7 d6 d5 d4 d3 d2 d1 d0
 .param VREF=1.2
 .param ROUT=100
 .param COUT=5p
-* Normalised input, clamped to 0 <= x < 1
-* For each bit:
-*     bit = floor(x*K) - 2*floor(x*K/2)
-* where K = 256,128,...,2
-B0 q0 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*256) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*128))
-B1 q1 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*128) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*64))
-B2 q2 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*64) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*32))
-B3 q3 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*32) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*16))
-B4 q4 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*16) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*8))
-B5 q5 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*8) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*4))
-B6 q6 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*4) - 2*floor(min(max(V(vin)/VREF,0),0.999999)*2))
-B7 q7 0 V = VREF*(floor(min(max(V(vin)/VREF,0),0.999999)*2) - 2*floor(min(max(V(vin)/VREF,0),0.999999)))
+* Clamp normalized input to 0 <= x < 1.
+.func adc_x(v) { min(max(v/VREF, 0), 0.999999) }
+* Return bit 0 of a non-negative integer-valued x.
+* Equivalent to x modulo 2, without requiring mod().
+.func bit(x) { floor(x) - 2*floor(x/2) }
+* 8-bit ideal quantizer.
+* d0 = LSB, d7 = MSB.
+B0 q0 0 V = VREF*bit(adc_x(V(vin))*256)
+B1 q1 0 V = VREF*bit(adc_x(V(vin))*128)
+B2 q2 0 V = VREF*bit(adc_x(V(vin))*64)
+B3 q3 0 V = VREF*bit(adc_x(V(vin))*32)
+B4 q4 0 V = VREF*bit(adc_x(V(vin))*16)
+B5 q5 0 V = VREF*bit(adc_x(V(vin))*8)
+B6 q6 0 V = VREF*bit(adc_x(V(vin))*4)
+B7 q7 0 V = VREF*bit(adc_x(V(vin))*2)
 * Finite output impedance / edge rate
 R0 q0 d0 {ROUT}
 R1 q1 d1 {ROUT}

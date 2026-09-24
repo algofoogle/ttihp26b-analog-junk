@@ -9,10 +9,10 @@ echo "======= PERFORMING INITIAL EXTRACTION: extract all ======"
 extract all
 ext2sim labels on
 ext2sim
-extresist tolerance 1
+# extresist minres 0.01 ;# 0.01mOhm (10uOhm)
+# extresist simplify off
+# extresist threshold 1000 ;# 1000mOhm (1R)
 
-# extresist tolerance 20 ; # Merge more resistors (normally 10%, pushing up to 20% for simpler netlist)
-#NOTE: Uri uses tolerance 1 -- how is this different?
 echo "======= EXTRACTING RESISTORS: extresist ======"
 extresist
 echo "======= ext2spice lvs ======"

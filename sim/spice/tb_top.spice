@@ -1,0 +1,51 @@
+Example r2r_dac TB: Convert analog sine to digital inputs, then back to digital via ideal & PEX DAC instances
+
+.lib cornerRES.lib res_typ $ NOTE: Can use res_stat for statistical (Monte-Carlo-Like) modeling instead.
+.lib cornerMOSlv.lib mos_tt
+
+.include "behavioural_adc_8b.spice"
+.include "../../magic/tt_um_algofoogle_analog_junk.sim.spice"
+.include "../../xschem/simulation/r2r_dac.spice"
+*.include "../../magic/r2r_dac.sim.spice"
+
+* Positive and negative inputs to the comparator, as their analog sources, range [0,1.2]V:
+Vp vinpa GND SIN(0.6 0.6 3Meg) $ 3MHz
+Vn vinna GND PWL(0 0   100u 1.2   200u 0)
+
+Vvdpwr VDPWR GND 1.2
+
+Xadcp vinpa  p7 p6 p5 p4 p3 p2 p1 p0  behavioural_adc_8b
+Xadcn vinna  n7 n6 n5 n4 n3 n2 n1 n0  behavioural_adc_8b
+
+XDUT
++   clk ena rst_n
++          p0         p1         p2         p3         p4         p5         p6         p7 
++          n0         n1         n2         n3         n4         n5         n6         n7 
++    uio_oe[0]  uio_oe[1]  uio_oe[2]  uio_oe[3]  uio_oe[4]  uio_oe[5]  uio_oe[6]  uio_oe[7]
++   uio_out[0] uio_out[1] uio_out[2] uio_out[3] uio_out[4] uio_out[5] uio_out[6] uio_out[7]
++    uo_out[0]  uo_out[1]  uo_out[2]  uo_out[3]  uo_out[4]  uo_out[5]  uo_out[6]  comp_out
++   VDPWR GND
++ tt_um_algofoogle_analog_junk_pex
+
+Xdacp p7 p6 p5 p4 p3 p2 p1 p0 vdacp GND r2r_dac
+Xdacn n7 n6 n5 n4 n3 n2 n1 n0 vdacn GND r2r_dac
+
+.control
+tran 200p 200u
+save
++ vinpa vdacp
++ p0 p1 p2 p3 p4 p5 p6 p7
++ vinna vdacn
++ n0 n1 n2 n3 n4 n5 n6 n7
++ comp_out
++ i(vvdpwr)
+write tb_top.raw
++ vinpa vdacp
++ p0 p1 p2 p3 p4 p5 p6 p7
++ vinna vdacn
++ n0 n1 n2 n3 n4 n5 n6 n7
++ comp_out
++ i(vvdpwr)
+* plot vinpa vinna comp_out max(0,min(1,1000*(vinpa-vinna))) vdacp vdacn
+.endc
+
